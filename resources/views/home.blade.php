@@ -1,17 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout.app')
+@section('main-content')
 
-  <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>Document</title>
-
-    @vite('resources/js/app.js')
-  </head>
-
-  <body>
-    <h1>Laravel with Bootstrap + Vite</h1>
-  </body>
-
-</html>
+<div class="container py-5">
+  <div class="row g-4">
+    @forelse ($movies as $movie)
+        <div class="col-3">
+          <div class="card h-100 p-2">
+            <div class="info">
+                <h2>Titolo: <span>{{ $movie->title }}</span></h2>
+                <h4>Titolo originale: <span>{{ $movie->original_title }}</span></h4>
+                <h4>Nazionalità: <span>{{ $movie->nationality }}</span></h4>
+                <h4>Data di uscita: <span>{{ $movie->date }}</span></h4>
+                <h4>Valutazione: <span>{{ $movie->vote }}</span></h4>
+            </div>
+          </div>
+        </div>
+    @empty
+        
+    @endforelse
+  </div>
+</div>
+    
+@endsection
