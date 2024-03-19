@@ -80,6 +80,9 @@ header {
 main {
     background-color: #474747;
     .container {
+        h2 {
+            color: red;
+        }
         .card {
             background-color: whitesmoke;
             a {
@@ -92,6 +95,21 @@ main {
                         color: #555;
                     }
                 }
+            }
+        }
+    }
+}
+
+.detail-bg {
+    height: 100vh;
+    .container {
+        background-color: whitesmoke;
+        border-radius: 15px;
+        h4 {
+            font-weight: bold;
+            color: red;
+            span {
+                color: #555;
             }
         }
     }
